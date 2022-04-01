@@ -55,10 +55,10 @@ def normalize_text(text):
     
     chars = []
     for ch in text:
-        if ch in "?:,.!-*@\"\'()\r\n\\“”":
+        if ch in ";?:,.!-*@\"\'()\r\n\\“”":
             ch = " "
         chars.append(ch)
-    chars = " ".join(chars).split()
+    chars = "".join(chars).split()
     chars = [c for c in chars if len(c) > 0]
     text = " ".join(chars)
     return text
