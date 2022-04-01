@@ -44,12 +44,21 @@ def normalize_text(text):
     text = unicodedata.normalize("NFKC", text)
     for i in "0123456789":
         if i in text:
-            t = []
+            chars = []
             for w in text.split():
                 if w in translate:
-                    t.append(translate[w])
+                    chars.append(translate[w])
                 else:
-                    t.append(w)
-            text = " ".join(t)
+                    chars.append(w)
+            text = " ".join(chars)
             assert i not in text
+    
+    chars = []
+    for ch in text:
+        if ch in "?:,.!-*@\"\'()\r\n\\“”":
+            ch = " "
+        chars.append(ch)
+    chars = " ".join(chars).split()
+    chars = [c for c in chars if len(c) > 0]
+    text = " ".join(chars)
     return text
