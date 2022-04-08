@@ -44,7 +44,7 @@ def normalize_text(text):
     """normalize vn text"""
     text = text.lower().strip()
     text = unicodedata.normalize("NFKC", text)
-    for i in "0123456789":
+    for i in "0123456789+ǀ":
         if i in text:
             chars = []
             for w in text.split():
