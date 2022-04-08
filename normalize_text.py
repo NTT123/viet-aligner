@@ -35,6 +35,8 @@ translate = {
     "70": "bảy mươi",
     "600": "sáu trăm",
     "700": "bảy trăm",
+    "k+": "ka cộng",
+    "chaneǀ": "chanel",
 }
 
 

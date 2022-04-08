@@ -3,7 +3,7 @@ Aligner vietnamese text and audio clip
 
 
 ```sh
-sudo apt install -y sox
+sudo apt install -y sox libsox-fmt-mp3
 ```
 
 ### Install MFA
@@ -14,13 +14,18 @@ conda activate kaldi
 conda install -c conda-forge kaldi montreal-forced-aligner
 ```
 
-### Align
+### Download datasets
 
 ```sh
 python download_infore.py --output-dir data
 python download_vivos.py --output-dir data
 python download_common_voice.py --output-dir data
 python download_fpt_open_speech.py --output-dir data
+```
+
+### Train acoustic model
+
+```sh
 python create_lexicon.py --data-dir data
-mfa train --clean -C ./data ./data/lexicon.txt mfa_output
+mfa train --clean -o mfa_vi_model -t ./mfa_tmp ./data ./data/lexicon.txt mfa_output
 ```
