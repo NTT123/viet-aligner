@@ -23,7 +23,13 @@ python download_common_voice.py --output-dir data
 python download_fpt_open_speech.py --output-dir data
 ```
 
-### Train acoustic model
+### Align using pretrained acoustic model
+
+```sh
+mfa align /path/to/corpus/dir assets/lexicon.txt assets/mfa_vi_model.zip /path/to/output/dir
+```
+
+### Train new acoustic model
 
 ```sh
 python create_lexicon.py --data-dir data
