@@ -1,0 +1,2 @@
+assets/mfa_vi_model.zip filter=lfs diff=lfs merge=lfs -text
+assets/lexicon.txt filter=lfs diff=lfs merge=lfs -text
